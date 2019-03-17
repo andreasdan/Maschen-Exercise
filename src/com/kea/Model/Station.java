@@ -1,0 +1,16 @@
+package Model;
+
+public enum Station {
+	HAMBURG_HARBOUR,
+	SCANDINAVIA,
+	DUISBURG,
+	KÖLN,
+	STUTTGART,
+	HANNOVER,
+	KASSEL,
+	FRANKFURT,
+	BERLIN,
+	LEIPZIG,
+	NÜRNBERG,
+	MUNICH
+}
