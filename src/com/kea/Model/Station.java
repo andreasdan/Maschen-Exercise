@@ -1,16 +1,16 @@
-package Model;
+package com.kea.Model;
 
 public enum Station {
 	HAMBURG_HARBOUR,
 	SCANDINAVIA,
 	DUISBURG,
-	KÖLN,
+	Kï¿½LN,
 	STUTTGART,
 	HANNOVER,
 	KASSEL,
 	FRANKFURT,
 	BERLIN,
 	LEIPZIG,
-	NÜRNBERG,
+	Nï¿½RNBERG,
 	MUNICH
 }

@@ -1,6 +1,6 @@
-package View;
+package com.kea.View;
 
-import Controller.*;
+import com.kea.Controller.*;
 
 public class Menu {
 

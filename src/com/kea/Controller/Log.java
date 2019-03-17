@@ -1,6 +1,6 @@
-package Controller;
+package com.kea.Controller;
 
-import Model.*;
+import com.kea.Model.*;
 
 public class Log {
 

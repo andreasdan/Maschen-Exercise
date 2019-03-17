@@ -1,4 +1,4 @@
-package Model;
+package com.kea.Model;
 
 public enum WeightType {
 	HEAVY,
