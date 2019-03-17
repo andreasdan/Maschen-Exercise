@@ -32,4 +32,9 @@ public class Log {
 		throw new UnsupportedOperationException();
 	}
 
+	public ResultSet getWagonStatus(WagonStatus wagonStatus) {
+		// TODO - implement Log.getWagonStatus
+		throw new UnsupportedOperationException();
+	}
+
 }
