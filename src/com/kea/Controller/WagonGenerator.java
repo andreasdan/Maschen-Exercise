@@ -2,6 +2,8 @@ package com.kea.Controller;
 
 import com.kea.Model.*;
 
+import java.util.List;
+
 public class WagonGenerator {
 
 	private List<Wagon> wagons;

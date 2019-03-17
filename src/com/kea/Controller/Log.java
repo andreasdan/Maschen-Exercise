@@ -2,6 +2,8 @@ package com.kea.Controller;
 
 import com.kea.Model.*;
 
+import java.sql.ResultSet;
+
 public class Log {
 
 	private String jdbcConnectString;

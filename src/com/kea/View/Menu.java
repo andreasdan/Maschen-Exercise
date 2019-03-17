@@ -2,6 +2,9 @@ package com.kea.View;
 
 import com.kea.Controller.*;
 
+import java.sql.ResultSet;
+import java.util.Scanner;
+
 public class Menu {
 
 	private Log log;

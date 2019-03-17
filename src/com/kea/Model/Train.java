@@ -1,5 +1,7 @@
 package com.kea.Model;
 
+import java.util.List;
+
 public class Train {
 
 	private List<Wagon> wagons;

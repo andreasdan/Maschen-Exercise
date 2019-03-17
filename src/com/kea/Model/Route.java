@@ -1,5 +1,7 @@
 package com.kea.Model;
 
+import java.util.TreeMap;
+
 public class Route {
 
 	private TreeMap<Integer, Station> route;
