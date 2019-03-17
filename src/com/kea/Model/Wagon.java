@@ -2,15 +2,52 @@ package com.kea.Model;
 
 public class Wagon {
 
-	private WeightType weightType;
-	private CargoType cargoType;
-	private WagonStatus wagonStatus;
-	private int wagonId;
-	private Station destination;
+	private WeightType weightType = null;
+	private CargoType cargoType = null;
+	private WagonStatus wagonStatus = null;
+	private int wagonId = - 1;
+	private Station destination = null;
 
-	public Wagon() {
-		// TODO - implement Wagon.Wagon
-		throw new UnsupportedOperationException();
+	public Wagon() {}
+
+	public WeightType getWeightType() {
+		return weightType;
+	}
+
+	public void setWeightType(WeightType weightType) {
+		this.weightType = weightType;
+	}
+
+	public CargoType getCargoType() {
+		return cargoType;
+	}
+
+	public void setCargoType(CargoType cargoType) {
+		this.cargoType = cargoType;
+	}
+
+	public WagonStatus getWagonStatus() {
+		return wagonStatus;
+	}
+
+	public void setWagonStatus(WagonStatus wagonStatus) {
+		this.wagonStatus = wagonStatus;
+	}
+
+	public int getWagonId() {
+		return wagonId;
+	}
+
+	public void setWagonId(int wagonId) {
+		this.wagonId = wagonId;
+	}
+
+	public Station getDestination() {
+		return destination;
+	}
+
+	public void setDestination(Station destination) {
+		this.destination = destination;
 	}
 
 	/**
@@ -18,13 +55,14 @@ public class Wagon {
 	 * @param wagon
 	 */
 	public boolean equals(Wagon wagon) {
-		// TODO - implement Wagon.equals
-		throw new UnsupportedOperationException();
+		return this.wagonId == wagon.wagonId;
 	}
 
 	public String toString() {
-		// TODO - implement Wagon.toString
-		throw new UnsupportedOperationException();
+		return "wagonId: '" + wagonId + "'\n" +
+				"weightType: '" + weightType + "'\n" +
+				"cargoType: '" + cargoType + "'\n" +
+				"wagonStatus: '" + wagonStatus + "'\n" +
+				"destination: '" + destination + "'\n";
 	}
-
 }

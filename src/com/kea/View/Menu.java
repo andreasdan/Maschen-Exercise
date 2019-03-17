@@ -3,6 +3,7 @@ package com.kea.View;
 import com.kea.Controller.*;
 
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.Scanner;
 
 public class Menu {
@@ -11,18 +12,21 @@ public class Menu {
 	private Scanner scanner;
 
 	public Menu() {
-		// TODO - implement Menu.Menu
-		throw new UnsupportedOperationException();
+		log = new Log();
+		scanner = new Scanner(System.in);
 	}
 
 	public void showMenu() {
-		// TODO - implement Menu.showMenu
-		throw new UnsupportedOperationException();
+		System.out.println("Train menu");
+		System.out.println("1: Check wagon status");
+		System.out.println("2: Close");
 	}
 
 	public int readInput() {
-		// TODO - implement Menu.readInput
-		throw new UnsupportedOperationException();
+		while(!scanner.hasNextInt()) {
+			scanner.next();
+		}
+		return scanner.nextInt();
 	}
 
 	/**
@@ -30,8 +34,17 @@ public class Menu {
 	 * @param resultSet
 	 */
 	public void printResultSet(ResultSet resultSet) {
-		// TODO - implement Menu.printResultSet
-		throw new UnsupportedOperationException();
+		try{
+			resultSet.beforeFirst();
+			while(resultSet.next())
+			{
+			}
+		}
+
+		catch (SQLException e) {
+			e.printStackTrace();
+
+		}
 	}
 
 }
