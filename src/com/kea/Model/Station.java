@@ -4,7 +4,7 @@ public enum Station {
 	HAMBURG_HARBOUR(1),
 	SCANDINAVIA(2),
 	DUISBURG(2),
-	KÜLN(4),
+	KÖLN(4),
 	STUTTGART(5),
 	HANNOVER(6),
 	KASSEL(7),

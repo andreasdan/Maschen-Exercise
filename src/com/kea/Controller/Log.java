@@ -2,16 +2,23 @@ package com.kea.Controller;
 
 import com.kea.Model.*;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 
 public class Log {
 
 	private String jdbcConnectString;
+	private String sqlUsername = "";
+	private String sqlPassword = "";
 	private ResultSet resultSet;
 
 	public Log() {
-		// TODO - implement Log.Log
-		throw new UnsupportedOperationException();
+		jdbcConnectString = "jdbc:mysql://localhost:3306/maschen";
+		sqlUsername = "public";
+		sqlPassword = "public";
+		resultSet = null;
 	}
 
 	/**
@@ -32,9 +39,19 @@ public class Log {
 		throw new UnsupportedOperationException();
 	}
 
+	public ResultSet getResultSet()
+	{
+		return resultSet;
+	}
+
 	public ResultSet getWagonStatus(WagonStatus wagonStatus) {
 		// TODO - implement Log.getWagonStatus
 		throw new UnsupportedOperationException();
+	}
+
+	private Connection getConnection() throws SQLException
+	{
+		return DriverManager.getConnection(jdbcConnectString, sqlUsername, sqlPassword);
 	}
 
 }
