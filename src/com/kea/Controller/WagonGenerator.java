@@ -15,6 +15,14 @@ public class WagonGenerator {
 		wagons = new ArrayList<>();
 	}
 
+	public List<Wagon> getWagons() {
+		return wagons;
+	}
+
+	public void setWagons(List<Wagon> wagons) {
+		this.wagons = wagons;
+	}
+
 	public void generateWagons() {
 		Random random = new Random();
 		int count = random.nextInt(10-1+1)+1;
