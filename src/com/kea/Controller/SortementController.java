@@ -3,25 +3,17 @@ package com.kea.Controller;
 import com.kea.Model.*;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public class SortementController {
 
 
-	private List<Wagon> wagons;
 	private List<Route> routes;
 
 	public SortementController() {
-		wagons = new ArrayList<>();
 		routes = new ArrayList<>();
-	}
-
-	public List<Wagon> getWagons() {
-		return wagons;
-	}
-
-	public void setWagons(List<Wagon> wagons) {
-		this.wagons = wagons;
 	}
 
 	public List<Route> getRoutes() {
@@ -32,7 +24,9 @@ public class SortementController {
 		this.routes = routes;
 	}
 
-	public void sortWagons() {
+	public Set<List<Wagon>> sortWagons(List<Wagon> wagons) {
+		Set<List<Wagon>> allWagons = new HashSet<>();
+
 		for (Wagon wagon : wagons)
 		{
 

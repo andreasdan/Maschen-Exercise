@@ -7,8 +7,11 @@ public class Route {
 	private TreeMap<Integer, Station> route;
 
 	public Route() {
-		// TODO - implement Route.Route
-		throw new UnsupportedOperationException();
+		route = new TreeMap<>();
+	}
+
+	public TreeMap<Integer, Station> getRoute() {
+		return route;
 	}
 
 	/**
@@ -17,8 +20,7 @@ public class Route {
 	 * @param station
 	 */
 	public void addStation(int stopId, Station station) {
-		// TODO - implement Route.addStation
-		throw new UnsupportedOperationException();
+		route.put(stopId, station);
 	}
 
 }
