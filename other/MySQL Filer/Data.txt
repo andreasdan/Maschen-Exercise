@@ -1,0 +1,46 @@
+INSERT INTO `tog`.`cargotype`
+(`Id`,`Description`)
+Values
+('01', 'WOOD'),
+('02', 'STEEL'),
+('03', 'OIL'),
+('04', 'GASOLINE'),
+('05', 'FOOD'),
+('06', 'CARS'),
+('07', 'GENERAL_GOODS');
+
+
+INSERT INTO `tog`.`weighttype`
+(`Id`,`Description`)
+Values
+('01', 'HEAVY'),
+('02', 'MEDIUM'),
+('03', 'LIGHT');
+
+
+INSERT INTO `tog`.`stations`
+(`Id`,`Name`)
+Values
+('01', 'HAMBURG_HARBOUR'),
+('02', 'SCANDINAVIA'),
+('03', 'DUISBURG'),
+('04', 'KÖLN'),
+('05', 'STUTTGART'),
+('06', 'HANNOVER'),
+('07', 'KASSEL'),
+('08', 'FRANKFURT'),
+('09', 'BERLIN'),
+('10', 'LEIPZIG'),
+('11', 'NÜRNBERG'),
+('12', 'MUNICH');
+
+
+INSERT INTO `tog`.`wagonstatus`
+(`Id`,`Description`)
+Values
+('01', 'TO_BE_SORTED'),
+('02', 'SORTED'),
+('03', 'DEPLOYED'),
+('04', 'ARRIVED');
+
+
