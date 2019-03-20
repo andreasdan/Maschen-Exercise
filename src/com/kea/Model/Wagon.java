@@ -1,6 +1,8 @@
 package com.kea.Model;
 
-public class Wagon {
+import java.io.Serializable;
+
+public class Wagon implements Serializable {
 
 	private WeightType weightType = null;
 	private CargoType cargoType = null;

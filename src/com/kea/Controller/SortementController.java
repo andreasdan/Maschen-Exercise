@@ -85,14 +85,14 @@ public class SortementController {
 			String query = "SELECT routeId, StopId, StationsId FROM routes";
 
 			Connection connection = DriverManager.getConnection(jdbcConnectString, sqlUsername, sqlPassword);
-			Statement stmt = connection.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
-			ResultSet res = stmt.executeQuery(query);
+			Statement statement = connection.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
+			ResultSet resSet = statement.executeQuery(query);
 
-			while (res.next())
+			while (resSet.next())
 			{
-				int routeId = res.getInt("RouteId");
-				int stopId = res.getInt("StopId");
-				int stationsId = res.getInt("StationsId");
+				int routeId = resSet.getInt("RouteId");
+				int stopId = resSet.getInt("StopId");
+				int stationsId = resSet.getInt("StationsId");
 				Station station = Station.values()[stationsId + 1];
 
 				switch (routeId)
@@ -114,6 +114,10 @@ public class SortementController {
 						break;
 				}
 			}
+
+			if (resSet!=null) { resSet.close(); }
+			if (statement!=null) { statement.close(); }
+			if (connection!=null) { connection.close(); }
 		}
 		catch (Exception e)
 		{
