@@ -7,20 +7,21 @@ import java.util.List;
 
 public class SortementController {
 
-	private List<Train> trains;
+
+	private List<Wagon> wagons;
 	private List<Route> routes;
 
 	public SortementController() {
-		trains = new ArrayList<>();
+		wagons = new ArrayList<>();
 		routes = new ArrayList<>();
 	}
 
-	public List<Train> getTrains() {
-		return trains;
+	public List<Wagon> getWagons() {
+		return wagons;
 	}
 
-	public void setTrains(List<Train> trains) {
-		this.trains = trains;
+	public void setWagons(List<Wagon> wagons) {
+		this.wagons = wagons;
 	}
 
 	public List<Route> getRoutes() {
@@ -31,11 +32,7 @@ public class SortementController {
 		this.routes = routes;
 	}
 
-	/**
-	 * 
-	 * @param wagons
-	 */
-	public void sortWagons(List<Wagon> wagons) {
+	public void sortWagons() {
 		for (Wagon wagon : wagons)
 		{
 

@@ -1,9 +1,10 @@
 package com.kea.Model;
 
 public enum WagonStatus {
-	ARRIVED(1),
-	SORTED(1),
-	DEPLOYED(3);
+	TO_BE_SORTED(1),
+	SORTED(2),
+	DEPLOYED(3),
+	ARRIVED(4);
 
 	private int id;
 

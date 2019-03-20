@@ -10,31 +10,31 @@ import java.sql.SQLException;
 public class Log {
 
 	private String jdbcConnectString;
-	private String sqlUsername = "";
-	private String sqlPassword = "";
+	private String sqlUsername;
+	private String sqlPassword;
 	private ResultSet resultSet;
 
 	public Log() {
 		jdbcConnectString = "jdbc:mysql://localhost:3306/maschen";
-		sqlUsername = "public";
-		sqlPassword = "public";
+		sqlUsername = "autologbot";
+		sqlPassword = "";
 		resultSet = null;
 	}
 
 	/**
 	 * 
-	 * @param train
+	 * @param wagon
 	 */
-	public void update(Train train) {
+	public void update(Wagon wagon) {
 		// TODO - implement Log.update
 		throw new UnsupportedOperationException();
 	}
 
 	/**
 	 * 
-	 * @param train
+	 * @param wagon
 	 */
-	public void add(Train train) {
+	public void add(Wagon wagon) {
 		// TODO - implement Log.add
 		throw new UnsupportedOperationException();
 	}

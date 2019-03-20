@@ -25,7 +25,7 @@ public class WagonGenerator {
 
 	public void generateWagons() {
 		Random random = new Random();
-		int count = random.nextInt(10-1+1)+1;
+		int count = random.nextInt(10)+1;
 
 		for(int i = 0; i <= count; i++)
 		{
@@ -47,5 +47,4 @@ public class WagonGenerator {
 			wagons.add(newWagon);
 		}
 	}
-
 }
