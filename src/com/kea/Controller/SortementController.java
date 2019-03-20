@@ -32,7 +32,8 @@ public class SortementController {
 		this.routes = routes;
 	}
 
-	public List<Train> sortWagons(List<Wagon> wagons) {
+	public List<Train> sortWagons(List<Wagon> wagons)
+	{
 		List<Train> trains = new ArrayList<>();
 
 		for (Wagon wagon : wagons)
@@ -81,7 +82,7 @@ public class SortementController {
 
 		try
 		{
-			String query = "SELECT * FROM routes";
+			String query = "SELECT routeId, StopId, StationsId FROM routes";
 
 			Connection connection = DriverManager.getConnection(jdbcConnectString, sqlUsername, sqlPassword);
 			Statement stmt = connection.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
@@ -92,23 +93,24 @@ public class SortementController {
 				int routeId = res.getInt("RouteId");
 				int stopId = res.getInt("StopId");
 				int stationsId = res.getInt("StationsId");
+				Station station = Station.values()[stationsId + 1];
 
 				switch (routeId)
 				{
 					case 1:
-						routeOne.addStation(stopId, Station.values()[stationsId + 1]);
+						routeOne.addStation(stopId, station);
 						break;
 					case 2:
-						routeTwo.addStation(stopId, Station.values()[stationsId + 1]);
+						routeTwo.addStation(stopId, station);
 						break;
 					case 3:
-						routeThree.addStation(stopId, Station.values()[stationsId + 1]);
+						routeThree.addStation(stopId, station);
 						break;
 					case 4:
-						routeFour.addStation(stopId, Station.values()[stationsId + 1]);
+						routeFour.addStation(stopId, station);
 						break;
 					case 5:
-						routeFive.addStation(stopId, Station.values()[stationsId + 1]);
+						routeFive.addStation(stopId, station);
 						break;
 				}
 			}
