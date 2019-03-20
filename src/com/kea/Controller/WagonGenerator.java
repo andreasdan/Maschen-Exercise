@@ -29,9 +29,9 @@ public class WagonGenerator {
 		for(int i = 0; i <= count; i++)
 		{
 			Wagon newWagon = new Wagon();
-			newWagon.setCargoType(CargoType.values()[random.nextInt(7)+2]);
-			newWagon.setWeightType(WeightType.values()[random.nextInt(3)+2]);
-			newWagon.setDestination(Station.values()[random.nextInt(12)+2]);
+			newWagon.setCargoType(CargoType.values()[random.nextInt(7)]);
+			newWagon.setWeightType(WeightType.values()[random.nextInt(3)]);
+			newWagon.setDestination(Station.values()[random.nextInt(12)]);
 			newWagon.setWagonStatus(WagonStatus.TO_BE_SORTED);
 			wagons.add(newWagon);
 		}

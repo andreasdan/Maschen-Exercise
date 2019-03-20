@@ -35,11 +35,6 @@ public class Log {
 		throw new UnsupportedOperationException();
 	}
 
-	public ResultSet getResultSet()
-	{
-		return resultSet;
-	}
-
 	public ResultSet getWagonStatus(WagonStatus wagonStatus) {
 		// TODO - implement Log.getWagonStatus
 		throw new UnsupportedOperationException();
