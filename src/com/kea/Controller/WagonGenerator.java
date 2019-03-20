@@ -41,7 +41,7 @@ public class WagonGenerator {
 			newWagon.setWeightType(WeightType.values()[weightType]);
 			newWagon.setDestination(Station.values()[station]);
 
-			newWagon.setWagonStatus(WagonStatus.ARRIVED);
+			newWagon.setWagonStatus(WagonStatus.TO_BE_SORTED);
 			newWagon.setWagonId(nextWagonId);
 
 			wagons.add(newWagon);
