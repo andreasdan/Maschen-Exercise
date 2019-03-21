@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Train {
-
+    private int wagonLimit = 10;
     private List<Wagon> wagons;
     private Route route;
 
@@ -66,7 +66,9 @@ public class Train {
      * @param wagon
      */
     public void add(Wagon wagon) {
-        wagons.add(wagon);
+        if (wagons.size() < wagonLimit) {
+            wagons.add(wagon);
+        }
     }
 
 }
