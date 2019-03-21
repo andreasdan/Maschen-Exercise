@@ -1,2 +1,2 @@
-# Maschen-Exercise
+# Maschen Exercise
 Modulopgave 2
