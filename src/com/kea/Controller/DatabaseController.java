@@ -35,7 +35,31 @@ public class DatabaseController {
 	}
 
 	public List<String> getAllWagonStatus() {
-		throw new UnsupportedOperationException();
+
+		List<String> wagons = new ArrayList<>();
+
+
+		try
+		{
+			String query = "";
+
+			Connection connection = DriverManager.getConnection(jdbcConnectString, sqlUsername, sqlPassword);
+			Statement statement = connection.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
+			ResultSet resSet = statement.executeQuery(query);
+
+			while(resSet.next())
+			{
+				resSet.beforeFirst();
+			}
+		}
+		catch (Exception e)
+		{
+			e.printStackTrace();
+		}
+
+
+
+		return wagons;
 	}
 
 	public List<String> getWagonStatus(int wagonId) {
