@@ -13,21 +13,29 @@ public class Main {
 
         int port = 9090;
         ServerSocket serverSocket;
-        Socket socket;
-        InputStream inputStream;
-        ObjectInputStream objectInputStream;
 
-        try {
+        try
+        {
             serverSocket = new ServerSocket(port);
-            System.out.println("Listening on port " + port);
-            socket = serverSocket.accept();
-            System.out.println("Accepted new connection");
+            System.out.println("Listening on port " + port + "...");
 
-            inputStream = socket.getInputStream();
-            objectInputStream = new ObjectInputStream(inputStream);
+            while (true) {
+                Socket socket = serverSocket.accept();
+                System.out.println("Accepted new connection.");
 
-            List<Wagon> arrivedWagons = (List<Wagon>)objectInputStream.readObject();
-            System.out.println("Received " + arrivedWagons.size() + " new wagons to be sorted.");
+                InputStream inputStream = socket.getInputStream();
+                ObjectInputStream objectInputStream = new ObjectInputStream(inputStream);
+
+                List<Wagon> arrivedWagons = (List<Wagon>) objectInputStream.readObject();
+                System.out.println("Received " + arrivedWagons.size() + " new wagons to be sorted.");
+
+                //TODO: sort recieved wagons
+
+                System.out.println("Closing connection...");
+                socket.close();
+                inputStream.close();
+                objectInputStream.close();
+            }
         }
         catch (Exception e)
         {

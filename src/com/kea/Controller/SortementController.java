@@ -19,7 +19,7 @@ public class SortementController {
 	public SortementController()
 	{
 		jdbcConnectString = "jdbc:mysql://localhost:3306/maschen";
-		sqlUsername = "autologbot";
+		sqlUsername = "autosortbot";
 		sqlPassword = "";
 		routes = getRoutesFromDatabase();
 	}
