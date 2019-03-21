@@ -1,5 +1,7 @@
 package com.kea.test.sort;
 
+import com.kea.Controller.SortementController;
+import com.kea.Model.Train;
 import com.kea.Model.Wagon;
 
 import java.io.InputStream;
@@ -13,13 +15,15 @@ public class Main {
 
         int port = 9090;
         ServerSocket serverSocket;
+        SortementController sortementController = new SortementController();
 
         try
         {
             serverSocket = new ServerSocket(port);
             System.out.println("Listening on port " + port + "...");
 
-            while (true) {
+            while (true)
+            {
                 Socket socket = serverSocket.accept();
                 System.out.println("Accepted new connection.");
 
@@ -29,9 +33,10 @@ public class Main {
                 List<Wagon> arrivedWagons = (List<Wagon>) objectInputStream.readObject();
                 System.out.println("Received " + arrivedWagons.size() + " new wagons to be sorted.");
 
-                //TODO: sort recieved wagons
+                List<Train> trains = sortementController.sortWagons(arrivedWagons);
 
                 System.out.println("Closing connection...");
+
                 socket.close();
                 inputStream.close();
                 objectInputStream.close();
