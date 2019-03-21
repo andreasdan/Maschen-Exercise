@@ -31,7 +31,7 @@ public class DatabaseController {
 	 * @param wagon
 	 */
 	public void add(Wagon wagon) {
-		throw new UnsupportedOperationException();
+
 	}
 
 	public List<String> getAllWagonStatus() {
@@ -63,11 +63,14 @@ public class DatabaseController {
 			{
 				resSet.beforeFirst();
 
+				String stationName = resSet.getString("Station");
+				int wagonID = resSet.getInt("WagonId");
 				String cargoType = resSet.getString("CargoType");
 				String wagonStatus = resSet.getString("WagonStatus");
 				String weightType = resSet.getString("WeightType");
 
-				String cargoAll = "Cargotype = " + cargoType + " Wagonstatus = " + wagonStatus + " Weighttype = " + weightType;
+				String cargoAll ="Wagon ID = " + wagonID + " Station = " + stationName + "Cargotype = " + cargoType + " Wagonstatus = "
+						+ wagonStatus + " Weighttype = " + weightType;
 
 				wagons.add(cargoAll);
 
