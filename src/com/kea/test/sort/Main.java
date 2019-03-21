@@ -4,6 +4,7 @@ import com.kea.Controller.DatabaseController;
 import com.kea.Controller.SortementController;
 import com.kea.Model.Train;
 import com.kea.Model.Wagon;
+import com.kea.Model.WagonStatus;
 
 import java.io.InputStream;
 import java.io.ObjectInputStream;
@@ -37,9 +38,11 @@ public class Main {
                 for(Wagon wagon : arrivedWagons)
                 {
                     dbController.add(wagon);
+                    dbController.update(wagon, WagonStatus.TO_BE_SORTED);
                 }
 
                 List<Train> trains = sortementController.sortWagons(arrivedWagons);
+                sortementController.deployTrains(trains);
 
                 System.out.println("Closing connection...");
 

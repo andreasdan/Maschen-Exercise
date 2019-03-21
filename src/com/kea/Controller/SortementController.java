@@ -57,9 +57,22 @@ public class SortementController {
 				train.add(wagon);
 				trains.add(train);
 			}
+
+			dbController.update(wagon, WagonStatus.SORTED);
 		}
 
 		return trains;
 	}
 
+	public void deployTrains(List<Train> trains)
+	{
+		for (Train train : trains)
+		{
+			for (Wagon wagon : train.getWagons())
+			{
+				dbController.update(wagon, WagonStatus.DEPLOYED);
+				dbController.update(wagon, WagonStatus.ARRIVED);
+			}
+		}
+	}
 }
