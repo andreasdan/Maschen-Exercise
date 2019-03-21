@@ -20,8 +20,9 @@ public class DatabaseController {
 	/**
 	 * 
 	 * @param wagon
+	 * @param status  
 	 */
-	public void update(Wagon wagon) {
+	public void update(Wagon wagon, WagonStatus status) {
 		throw new UnsupportedOperationException();
 	}
 
