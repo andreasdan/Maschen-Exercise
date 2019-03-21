@@ -14,7 +14,7 @@ public class DatabaseController {
 	public DatabaseController() {
 		jdbcConnectString = "jdbc:mysql://localhost:3306/tog";
 		sqlUsername = "bot";
-		sqlPassword = "";
+		sqlPassword = "P@ssw0rd";
 	}
 
 	/**
