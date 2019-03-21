@@ -22,7 +22,6 @@ public class DatabaseController {
 	 * @param wagon
 	 */
 	public void update(Wagon wagon) {
-		// TODO - implement Log.update
 		throw new UnsupportedOperationException();
 	}
 
@@ -31,17 +30,15 @@ public class DatabaseController {
 	 * @param wagon
 	 */
 	public void add(Wagon wagon) {
-		// TODO - implement Log.add
 		throw new UnsupportedOperationException();
 	}
 
 	public List<String> getWagonStatus(WagonStatus wagonStatus) {
-		// TODO - implement Log.getWagonStatus
 		throw new UnsupportedOperationException();
 	}
 
 	public List<String> getWagonStatus(int wagonId) {
-		
+		throw new UnsupportedOperationException();
 	}
 
 	public List<Route> getRoutesFromDatabase()
