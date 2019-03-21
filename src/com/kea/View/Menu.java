@@ -45,10 +45,9 @@ public class Menu {
 				default:
 					System.out.println("Invalid menu option..");
 					break;
-				}
 			}
-
 		}
+
 	}
 
 	private int readInput() {
@@ -59,23 +58,4 @@ public class Menu {
 		}
 		return scanner.nextInt();
 	}
-
-	/**
-	 * 
-	 * @param resultSet
-	 */
-	public void printResultSet(ResultSet resultSet) {
-		try{
-			resultSet.beforeFirst();
-			while(resultSet.next())
-			{
-			}
-		}
-
-		catch (SQLException e) {
-			e.printStackTrace();
-
-		}
-	}
-
 }

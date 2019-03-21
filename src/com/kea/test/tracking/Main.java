@@ -1,4 +1,10 @@
-package com.kea.test.generate.sort.tracking;
+package com.kea.test.tracking;
+
+import com.kea.View.Menu;
 
 public class Main {
+    public static void main(String[] args) {
+        Menu menu = new Menu();
+        menu.showMenu();
+    }
 }
