@@ -17,7 +17,9 @@ public class Menu {
 		scanner = new Scanner(System.in);
 	}
 
-	public void showMenu() {
+	public void showMenu()
+	{
+		runMenu = true;
 		while (runMenu) {
 			System.out.println("Train menu");
 			System.out.println("1: Check wagon status from Id");
@@ -54,6 +56,7 @@ public class Menu {
 		System.out.print(" >");
 		while(!scanner.hasNextInt()) {
 			scanner.next();
+			System.out.println("Wrong input..");
 			System.out.print(" >");
 		}
 		return scanner.nextInt();
