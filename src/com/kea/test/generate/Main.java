@@ -14,7 +14,8 @@ public class Main {
         OutputStream output;
         ObjectOutputStream objectOutputStream;
 
-        try {
+        try
+        {
             socket = new Socket("localhost", 9090);
             output = socket.getOutputStream();
             objectOutputStream = new ObjectOutputStream(output);

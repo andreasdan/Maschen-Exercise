@@ -33,7 +33,7 @@ public class DatabaseController {
 		throw new UnsupportedOperationException();
 	}
 
-	public List<String> getWagonStatus(WagonStatus wagonStatus) {
+	public List<String> getAllWagonStatus() {
 		throw new UnsupportedOperationException();
 	}
 

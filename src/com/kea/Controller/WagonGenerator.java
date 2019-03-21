@@ -24,7 +24,7 @@ public class WagonGenerator {
 
 	public void generateWagons() {
 		Random random = new Random();
-		int count = random.nextInt(20)+1;
+		int count = random.nextInt(15)+10; //10 to 25 wagons generated
 
 		for(int i = 0; i <= count; i++)
 		{
