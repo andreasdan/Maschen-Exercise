@@ -41,7 +41,19 @@ public class DatabaseController {
 
 		try
 		{
-			String query = "";
+			String query = "SELECT log.Id,\n" +
+					"    log.Timestamp,\n" +
+					"    wagons.Id AS WagonId,\n" +
+					"    wagonstatus.Description AS WagonStatus,\n" +
+					"    weighttype.Description AS WeightType,\n" +
+					"    cargotype.Description AS CargoType,\n" +
+					"    stations.Name AS Station\n" +
+					"FROM log\n" +
+					"INNER JOIN wagons ON wagons.Id = log.WagonsId\n" +
+					"INNER JOIN wagonstatus ON log.WagonStatusId = wagonstatus.Id\n" +
+					"INNER JOIN weighttype ON wagons.WeightTypeId = weighttype.Id\n" +
+					"INNER JOIN cargotype ON wagons.CargoTypeId = cargotype.Id\n" +
+					"INNER JOIN stations ON wagons.StationsId = stations.Id\n";
 
 			Connection connection = DriverManager.getConnection(jdbcConnectString, sqlUsername, sqlPassword);
 			Statement statement = connection.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
