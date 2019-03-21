@@ -9,7 +9,6 @@ import java.util.Random;
 public class WagonGenerator {
 
 	private List<Wagon> wagons;
-	private int nextWagonId = 0;
 
 	public WagonGenerator() {
 		wagons = new ArrayList<>();
@@ -25,27 +24,16 @@ public class WagonGenerator {
 
 	public void generateWagons() {
 		Random random = new Random();
-		int count = random.nextInt(10-1+1)+1;
+		int count = random.nextInt(20)+1;
 
 		for(int i = 0; i <= count; i++)
 		{
-			nextWagonId++;
-
 			Wagon newWagon = new Wagon();
-
-			int cargoType = random.nextInt(7)+1;
-			int weightType = random.nextInt(3)+1;
-			int station = random.nextInt(12)+1;
-
-			newWagon.setCargoType(CargoType.values()[cargoType]);
-			newWagon.setWeightType(WeightType.values()[weightType]);
-			newWagon.setDestination(Station.values()[station]);
-
-			newWagon.setWagonStatus(WagonStatus.ARRIVED);
-			newWagon.setWagonId(nextWagonId);
-
+			newWagon.setCargoType(CargoType.values()[random.nextInt(7)]);
+			newWagon.setWeightType(WeightType.values()[random.nextInt(3)]);
+			newWagon.setDestination(Station.values()[random.nextInt(12)]);
+			newWagon.setWagonStatus(WagonStatus.TO_BE_SORTED);
 			wagons.add(newWagon);
 		}
 	}
-
 }

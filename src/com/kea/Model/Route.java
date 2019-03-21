@@ -4,11 +4,23 @@ import java.util.TreeMap;
 
 public class Route {
 
+	private int id;
 	private TreeMap<Integer, Station> route;
 
 	public Route() {
-		// TODO - implement Route.Route
-		throw new UnsupportedOperationException();
+		route = new TreeMap<>();
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public TreeMap<Integer, Station> getRoute() {
+		return route;
 	}
 
 	/**
@@ -17,8 +29,12 @@ public class Route {
 	 * @param station
 	 */
 	public void addStation(int stopId, Station station) {
-		// TODO - implement Route.addStation
-		throw new UnsupportedOperationException();
+		route.put(stopId, station);
+	}
+
+	public boolean hasStation(Station station)
+	{
+		return route.containsValue(station);
 	}
 
 }

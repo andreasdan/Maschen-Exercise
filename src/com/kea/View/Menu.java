@@ -8,11 +8,9 @@ import java.util.Scanner;
 
 public class Menu {
 
-	private Log log;
 	private Scanner scanner;
 
 	public Menu() {
-		log = new Log();
 		scanner = new Scanner(System.in);
 	}
 

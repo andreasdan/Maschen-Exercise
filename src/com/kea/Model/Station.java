@@ -3,7 +3,7 @@ package com.kea.Model;
 public enum Station {
 	HAMBURG_HARBOUR(1),
 	SCANDINAVIA(2),
-	DUISBURG(2),
+	DUISBURG(3),
 	KÖLN(4),
 	STUTTGART(5),
 	HANNOVER(6),

@@ -15,7 +15,7 @@ public class Menu {
 
         System.out.println("Train menu");
         System.out.println("1: Se status for vogne");
-        int valg = readInt();
+        int valg = InputHandler.readInt();
 
         if(valg==1)
         {
@@ -42,13 +42,6 @@ public class Menu {
 
     }
 
-    public int readInt() {
-        Scanner scanner = new Scanner(System.in);
 
-        while(!scanner.hasNextInt()) {
-            scanner.next();
-        }
-        return scanner.nextInt();
-    }
 
 }

@@ -7,20 +7,13 @@ import java.util.List;
 
 public class SortementController {
 
-	private List<Train> trains;
+    private DatabaseController dbController;
 	private List<Route> routes;
 
-	public SortementController() {
-		trains = new ArrayList<>();
-		routes = new ArrayList<>();
-	}
-
-	public List<Train> getTrains() {
-		return trains;
-	}
-
-	public void setTrains(List<Train> trains) {
-		this.trains = trains;
+	public SortementController()
+	{
+	    dbController = new DatabaseController();
+		routes = dbController.getRoutesFromDatabase();
 	}
 
 	public List<Route> getRoutes() {
@@ -31,15 +24,42 @@ public class SortementController {
 		this.routes = routes;
 	}
 
-	/**
-	 * 
-	 * @param wagons
-	 */
-	public void sortWagons(List<Wagon> wagons) {
+	public List<Train> sortWagons(List<Wagon> wagons)
+	{
+		List<Train> trains = new ArrayList<>();
+
 		for (Wagon wagon : wagons)
 		{
+			Route correctRoute = null;
+			for (Route route : routes)
+			{
+				if (route.hasStation(wagon.getDestination()))
+				{
+					correctRoute = route;
+				}
+			}
 
+			boolean hasTrain = false;
+			for (Train train : trains)
+			{
+				if (train.getRoute().hasStation(wagon.getDestination()))
+				{
+					train.add(wagon);
+					hasTrain = true;
+					break;
+				}
+			}
+
+			if (!hasTrain)
+			{
+				Train train = new Train();
+				train.setRoute(correctRoute);
+				train.add(wagon);
+				trains.add(train);
+			}
 		}
+
+		return trains;
 	}
 
 }

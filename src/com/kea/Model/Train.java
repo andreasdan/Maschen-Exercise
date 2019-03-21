@@ -4,61 +4,71 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Train {
+    private int wagonLimit = 10;
+    private List<Wagon> wagons;
+    private Route route;
 
-	private List<Wagon> wagons;
-	private Route route;
+    public Train() {
+        wagons = new ArrayList<>();
+        route = new Route();
+    }
 
-	public Train() {
-		wagons = new ArrayList<>();
-		route = new Route();
-	}
+    public Route getRoute() {
+        return route;
+    }
 
-	public List<Wagon> getWagons() {
-		return wagons;
-	}
+    public void setRoute(Route route) {
+        this.route = route;
+    }
 
-	public void setWagons(List<Wagon> wagons) {
-		this.wagons = wagons;
-	}
+    public List<Wagon> getWagons() {
+        return wagons;
+    }
 
-	/**
-	 * 
-	 * @param train
-	 */
-	public boolean equals(Train train) {
-		if (train.getWagons().size() != wagons.size())
-		{
-			return false;
-		}
+    public void setWagons(List<Wagon> wagons) {
+        this.wagons = wagons;
+    }
 
-		for (int i = 0; i < wagons.size(); i++)
-		{
-			if (wagons.get(i).getWagonId() != train.getWagons().get(i).getWagonId())
-			{
-				return false;
-			}
-		}
+    /**
+     *
+     * @param train
+     */
+    public boolean equals(Train train) {
+        if (train.getWagons().size() != wagons.size())
+        {
+            return false;
+        }
 
-		return true;
-	}
+        for (int i = 0; i < wagons.size(); i++)
+        {
+            if (wagons.get(i).getWagonId() != train.getWagons().get(i).getWagonId())
+            {
+                return false;
+            }
+        }
 
-	public String toString() {
-		String trainString = "";
+        return true;
+    }
 
-		for (Wagon wagon : wagons)
-		{
-			 trainString += wagon.toString() + "\n";
-		}
+    public String toString() {
+        String trainString = "";
 
-		return trainString;
-	}
+        for (Wagon wagon : wagons)
+        {
+            trainString += wagon.toString() + "\n";
+        }
 
-	/**
-	 * 
-	 * @param wagon
-	 */
-	public void add(Wagon wagon) {
-		wagons.add(wagon);
-	}
+        return trainString;
+    }
+
+    /**
+     *
+     * @param wagon
+     */
+    public void add(Wagon wagon) {
+        if (wagons.size() < wagonLimit) {
+            wagons.add(wagon);
+        }
+    }
 
 }

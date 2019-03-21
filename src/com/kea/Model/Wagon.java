@@ -1,11 +1,13 @@
 package com.kea.Model;
 
-public class Wagon {
+import java.io.Serializable;
+
+public class Wagon implements Serializable {
 
 	private WeightType weightType = null;
 	private CargoType cargoType = null;
 	private WagonStatus wagonStatus = null;
-	private int wagonId = - 1;
+	private int wagonId = this.hashCode();
 	private Station destination = null;
 
 	public Wagon() {}
@@ -36,10 +38,6 @@ public class Wagon {
 
 	public int getWagonId() {
 		return wagonId;
-	}
-
-	public void setWagonId(int wagonId) {
-		this.wagonId = wagonId;
 	}
 
 	public Station getDestination() {
