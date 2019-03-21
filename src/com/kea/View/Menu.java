@@ -15,6 +15,7 @@ public class Menu {
 
 	public Menu() {
 		scanner = new Scanner(System.in);
+		dbController = new DatabaseController();
 	}
 
 	public void showMenu()
@@ -37,9 +38,16 @@ public class Menu {
 					}
 				case 2:
 					List<String> allEntries = dbController.getAllWagonStatus();
-					for (String entry : allEntries) {
-						System.out.println(entry);
+					if(allEntries.size()>0){
+						for (String entry : allEntries) {
+							System.out.println(entry);
+						}
 					}
+					else
+						{
+							System.out.println("No trains found");
+						}
+
 					break;
 				case 3:
 					runMenu = false;

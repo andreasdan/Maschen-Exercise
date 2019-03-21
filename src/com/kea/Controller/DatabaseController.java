@@ -62,7 +62,19 @@ public class DatabaseController {
 			while(resSet.next())
 			{
 				resSet.beforeFirst();
+
+				String cargoType = resSet.getString("CargoType");
+				String wagonStatus = resSet.getString("WagonStatus");
+				String weightType = resSet.getString("WeightType");
+
+				String cargoAll = "Cargotype = " + cargoType + " Wagonstatus = " + wagonStatus + " Weighttype = " + weightType;
+
+				wagons.add(cargoAll);
+
 			}
+			if (resSet!=null) { resSet.close(); }
+			if (statement!=null) { statement.close(); }
+			if (connection!=null) { connection.close(); }
 		}
 		catch (Exception e)
 		{
