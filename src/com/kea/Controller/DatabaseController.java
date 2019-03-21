@@ -32,6 +32,19 @@ public class DatabaseController {
 	 */
 	public void add(Wagon wagon) {
 
+		try {
+			String query = "INSERT INTO " +
+					"wagons(Id, StationsId, WeightTypeId, CargoTypeId)" +
+					"VALUES(" + wagon.getWagonId() + "," + wagon.getDestination().getId() + ", " + wagon.getWeightType().getId() + "," + wagon.getCargoType().getId() + ")";
+
+			Connection connection = DriverManager.getConnection(jdbcConnectString, sqlUsername, sqlPassword);
+			Statement statement = connection.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
+			statement.execute(query);
+		}
+		catch (Exception e)
+		{
+			e.printStackTrace();
+		}
 	}
 
 	public List<String> getAllWagonStatus() {

@@ -1,5 +1,6 @@
 package com.kea.test.sort;
 
+import com.kea.Controller.DatabaseController;
 import com.kea.Controller.SortementController;
 import com.kea.Model.Train;
 import com.kea.Model.Wagon;
@@ -32,6 +33,11 @@ public class Main {
 
                 List<Wagon> arrivedWagons = (List<Wagon>) objectInputStream.readObject();
                 System.out.println("Received " + arrivedWagons.size() + " new wagons to be sorted.");
+                DatabaseController dbController = new DatabaseController();
+                for(Wagon wagon : arrivedWagons)
+                {
+                    dbController.add(wagon);
+                }
 
                 List<Train> trains = sortementController.sortWagons(arrivedWagons);
 
