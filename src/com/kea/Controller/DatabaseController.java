@@ -12,8 +12,8 @@ public class DatabaseController {
 	private String sqlPassword;
 
 	public DatabaseController() {
-		jdbcConnectString = "jdbc:mysql://localhost:3306/maschen";
-		sqlUsername = "autologbot";
+		jdbcConnectString = "jdbc:mysql://localhost:3306/tog";
+		sqlUsername = "bot";
 		sqlPassword = "";
 	}
 
@@ -64,7 +64,7 @@ public class DatabaseController {
 				int routeId = resSet.getInt("RouteId");
 				int stopId = resSet.getInt("StopId");
 				int stationsId = resSet.getInt("StationsId");
-				Station station = Station.values()[stationsId + 1];
+				Station station = Station.values()[stationsId - 1];
 
 				switch (routeId)
 				{
